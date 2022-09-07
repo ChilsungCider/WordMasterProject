@@ -19,10 +19,8 @@ public class WordCRUD implements ICRUD {
         int level = s.nextInt();
         String word = s.nextLine();
 
-        // 1 driveway
         System.out.print("뜻 입력 : ");
         String meaning = s.nextLine();
-        //차고 진입로
 
         return new Word(0, level, word, meaning);
     }

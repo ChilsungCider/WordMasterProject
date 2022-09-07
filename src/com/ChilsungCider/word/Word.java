@@ -5,7 +5,6 @@ public class Word {
     private int level;
     private String word;
     private String meaning;
-    //데이터 클래스
     Word(){}
     Word(int id, int level, String word, String meaning){
         this.id = id;
