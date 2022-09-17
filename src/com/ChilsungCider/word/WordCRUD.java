@@ -168,6 +168,12 @@ public class WordCRUD implements ICRUD {
         }
     }
 
+    public void searchLevel() {
+        System.out.print("==> 원하는 레벨은? (1~3) ");
+        int level = s.nextInt();
+        listAll(level);
+    }
+
     public void systemOut(){
         System.out.println("\n프로그램이 종료되었습니다.");
     }
