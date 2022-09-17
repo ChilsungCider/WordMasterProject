@@ -1,0 +1,4 @@
+1| sort|종류
+1| bubble|거품
+3| abyss|심연, 깊은 구렁
+2| opposition|항의
