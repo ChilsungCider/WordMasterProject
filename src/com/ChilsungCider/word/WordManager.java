@@ -44,6 +44,9 @@ public class WordManager {
             else if (menu == 5){
                 wordCRUD.updateWord();
             }
+            else if (menu == 6){
+                wordCRUD.deleteWord();
+            }
         }
     }
 }
