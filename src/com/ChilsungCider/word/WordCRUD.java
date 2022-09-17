@@ -7,6 +7,8 @@ public class WordCRUD implements ICRUD {
     ArrayList<Word> list;
     Scanner s;
 
+    final String filename = "Lee.txt";
+
     WordCRUD(Scanner s) {
         list = new ArrayList<>();
         this.s = s;
@@ -52,12 +54,50 @@ public class WordCRUD implements ICRUD {
     public void listAll() {
         System.out.println("---------------------------------------");
         for(int i = 0; i < list.size(); i++) {
-            System.out.print((i+1) + " ");
+            System.out.print((i + 1) + " ");
             System.out.println(list.get(i).toString());
         }
         System.out.println("---------------------------------------");
     }
+
+    public ArrayList<Integer> listAll(String keyword){
+        ArrayList<Integer> idList = new ArrayList<>();
+        int k = 0;
+        System.out.println("\n---------------------------------------");
+        for(int i = 0; i < list.size(); i++) {
+            String word = list.get(i).getWord();
+            if (!word.contains(keyword)) continue;
+            System.out.print((k + 1) + " ");
+            System.out.println(list.get(i).toString());
+            idList.add(i);
+            k++;
+        }
+        System.out.println("---------------------------------------\n");
+        return idList;
+    }
+
+    public void listAll(int level) {
+        int k = 0;
+        System.out.println("\n---------------------------------------");
+        for(int i = 0; i < list.size(); i++) {
+            int iLevel = list.get(i).getLevel();
+            if (iLevel != level) continue;
+            System.out.print((k + 1) + " ");
+            System.out.println(list.get(i).toString());
+            k++;
+        }
+        System.out.println("---------------------------------------\n");
+    }
+
+    public void searchWord() {
+        System.out.print("==> 원하는 단어는? ");
+        String keyword = s.next();
+        listAll(keyword);
+    }
+
+
     public void systemOut(){
         System.out.println("\n프로그램이 종료되었습니다.");
     }
+
 }
