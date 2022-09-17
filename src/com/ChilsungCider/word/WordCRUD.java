@@ -136,7 +136,6 @@ public class WordCRUD implements ICRUD {
             while(true) {
                 line = br.readLine();
                 if(line == null) {
-                    System.out.println("\n파일에 저장된 단어가 없습니다.");
                     break;
                 }
 
